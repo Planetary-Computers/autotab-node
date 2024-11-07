@@ -1,0 +1,33 @@
+{
+  "name": "autotab",
+  "version": "0.0.1",
+  "description": "The official TypeScript library for the Autotab API",
+  "author": "Planetary Computers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Planetary-Computers/autotab-node.git"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^4.0 || ^5.0",
+    "ts-jest": "^29.2.5",
+    "jest": "^29.7.0"
+  },
+  "keywords": [
+    "autotab",
+    "browser",
+    "automation",
+    "computer",
+    "use"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Planetary-Computers/autotab-node/issues"
+  },
+  "homepage": "https://github.com/Planetary-Computers/autotab-nodeD#readme"
+}
