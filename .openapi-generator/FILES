@@ -1,4 +1,3 @@
-.gitignore
 .npmignore
 package.json
 src/apis/RunApi.ts
@@ -10,7 +9,6 @@ src/models/HTTPValidationError.ts
 src/models/Input.ts
 src/models/RunSession.ts
 src/models/RunSessionState.ts
-src/models/RunSessionWithData.ts
 src/models/RunSkillRequest.ts
 src/models/Skill.ts
 src/models/ValidationError.ts
