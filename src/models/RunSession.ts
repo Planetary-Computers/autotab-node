@@ -72,6 +72,12 @@ export interface RunSession {
     startTime: Date;
     /**
      * 
+     * @type {string}
+     * @memberof RunSession
+     */
+    name?: string | null;
+    /**
+     * 
      * @type {Date}
      * @memberof RunSession
      */
@@ -127,6 +133,7 @@ export function RunSessionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'createdAt': (new Date(json['created_at'])),
         'environment': EnvironmentFromJSON(json['environment']),
         'startTime': (new Date(json['start_time'])),
+        'name': json['name'] == null ? undefined : json['name'],
         'endTime': json['end_time'] == null ? undefined : (new Date(json['end_time'])),
         'state': json['state'] == null ? undefined : RunSessionStateFromJSON(json['state']),
         'inputs': json['inputs'] == null ? undefined : json['inputs'],
@@ -151,6 +158,7 @@ export function RunSessionFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'created_at': ((value['createdAt']).toISOString()),
         'environment': EnvironmentToJSON(value['environment']),
         'start_time': ((value['startTime']).toISOString()),
+        'name': value['name'],
         'end_time': value['endTime'] == null ? undefined : ((value['endTime'] as any).toISOString()),
         'state': RunSessionStateToJSON(value['state']),
         'inputs': value['inputs'],
