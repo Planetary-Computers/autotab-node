@@ -150,9 +150,9 @@ export class BaseAPI {
         }
 
         const headers = Object.assign({}, this.configuration.headers, context.headers);
-        headers["User-Agent"] = "Autotab/Node 0.0.3";
+        headers["User-Agent"] = "Autotab/Node 0.0.4";
         headers["Autotab-Lang"] = "node";
-        headers["Autotab-Package-Version"] = "0.0.3";
+        headers["Autotab-Package-Version"] = "0.0.4";
         Object.keys(headers).forEach(key => headers[key] === undefined ? delete headers[key] : {});
 
         const initOverrideFn =

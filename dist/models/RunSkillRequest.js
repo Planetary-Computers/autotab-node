@@ -41,8 +41,7 @@ function RunSkillRequestFromJSONTyped(json, ignoreDiscriminator) {
 function RunSkillRequestToJSON(json) {
     return RunSkillRequestToJSONTyped(json, false);
 }
-function RunSkillRequestToJSONTyped(value, ignoreDiscriminator) {
-    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+function RunSkillRequestToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }

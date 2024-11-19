@@ -1,6 +1,6 @@
 {
   "name": "autotab",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The official TypeScript library for the Autotab API",
   "author": "Planetary Computers",
   "repository": {
@@ -9,8 +9,12 @@
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc && tsc -p tsconfig.esm.json",
     "prepare": "npm run build"
   },
   "devDependencies": {

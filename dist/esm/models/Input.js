@@ -1,4 +1,3 @@
-"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -12,17 +11,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.instanceOfInput = instanceOfInput;
-exports.InputFromJSON = InputFromJSON;
-exports.InputFromJSONTyped = InputFromJSONTyped;
-exports.InputToJSON = InputToJSON;
-exports.InputToJSONTyped = InputToJSONTyped;
-var VariableDataType_1 = require("./VariableDataType");
+import { VariableDataTypeFromJSON, VariableDataTypeToJSON, } from './VariableDataType';
 /**
  * Check if a given object implements the Input interface.
  */
-function instanceOfInput(value) {
+export function instanceOfInput(value) {
     if (!('jsonKey' in value) || value['jsonKey'] === undefined)
         return false;
     if (!('id' in value) || value['id'] === undefined)
@@ -31,30 +24,29 @@ function instanceOfInput(value) {
         return false;
     return true;
 }
-function InputFromJSON(json) {
+export function InputFromJSON(json) {
     return InputFromJSONTyped(json, false);
 }
-function InputFromJSONTyped(json, ignoreDiscriminator) {
+export function InputFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
         'jsonKey': json['json_key'],
         'id': json['id'],
-        'dataType': (0, VariableDataType_1.VariableDataTypeFromJSON)(json['data_type']),
+        'dataType': VariableDataTypeFromJSON(json['data_type']),
     };
 }
-function InputToJSON(json) {
+export function InputToJSON(json) {
     return InputToJSONTyped(json, false);
 }
-function InputToJSONTyped(value, ignoreDiscriminator) {
-    if (ignoreDiscriminator === void 0) { ignoreDiscriminator = false; }
+export function InputToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
     return {
         'json_key': value['jsonKey'],
         'id': value['id'],
-        'data_type': (0, VariableDataType_1.VariableDataTypeToJSON)(value['dataType']),
+        'data_type': VariableDataTypeToJSON(value['dataType']),
     };
 }
